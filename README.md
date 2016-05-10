@@ -9,7 +9,7 @@ Each post and comment is authored by a user.
 
 ## Setup
 
-1. `git clone `
+1. `git clone git@github.com:HanchengZhao/rbac-forum-mean-stack.git `
 2. `npm install`
 3. `mongod --smallfiles --syslog --fork`
 4. `node server.js`
