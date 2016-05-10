@@ -1,0 +1,40 @@
+    <div class="breadcrumb pull-right where-am-i" ng-show ="buttonEditMode()">
+      <form ng-submit="addtopic()">
+        <button type="submit" class="btn btn-primary">Add a topic</button>
+        <input type="text" ng-model="name" placeholder="Topic name"></input>
+      </form>
+    </div>
+    <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Topics</h3>
+        </th>
+        <!--<th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>-->
+        <!--<th class="cell-stat text-center hidden-xs hidden-sm">Comments</th>-->
+        <!--<th class="cell-stat-2x hidden-xs hidden-sm">Created by</th>-->
+      </tr>
+    </thead>
+    <tbody
+      <tr ng-repeat="topic in topics | orderBy:'-'">
+        <td class="text-center"></td>
+        <td>
+          <div ng-show ="buttonEditMode()" class="pull-right ">
+          <button type="btn" ng-click="destroy(topic)" class="btn btn-danger">Destroy</button> 
+          <button type="btn" ng-click="toggleEditMode(this)" class="btn btn-info">Edit</button><br><br>
+          <form ng-submit="toggleEditMode(this); savetopic(topic)" ng-show="this.editMode || false">
+              <button type="submit" class="btn btn-success">Save changes</button>
+              <input type="text" ng-model="this.topic.name"></input>
+          </form>
+          </div>
+          <h4><a href ="#posts/show/{{topic._id}}">{{topic.name}}</a></h4>
+        </td>
+        <!--<td class="text-center hidden-xs hidden-sm">0</td>-->
+        <!--<td class="text-center hidden-xs hidden-sm">0</td>-->
+        <!--<td class="hidden-xs hidden-sm">admin<br></td>-->
+      </tr>
+      </tbody>
+      </table>
+      
+      

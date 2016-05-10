@@ -1,0 +1,74 @@
+
+  
+
+    <h2>Topic: {{topic_name}}</h2>
+    <div class="breadcrumb pull-right where-am-i" ng-show ="buttonEditMode()">
+      <form ng-submit="formshow()">
+        <button type="submit"  onclick='setusername();' class="btn btn-primary">New post</button>
+      </form>
+    </div>
+        
+    <div class="col-sm-12">
+      
+      <form role="form" ng-show = "showVar" ng-submit = "createPost()">
+        <h4>New Post:</h4>
+        <div class="form-group">
+          <textarea class="form-control" rows="1" required ng-model='title' placeholder='Title' id ='textarea'></textarea><br>
+          <textarea class="form-control" rows="4" required ng-model='content' placeholder='Content' id ='textarea'></textarea>
+          <p name='author'  ><h5 id='username' >author: {{username}}</h5></p>
+        </div>
+        <button type="submit" class="btn btn-success"  >Submit</button>
+        <button type="button" class="btn btn-danger" ng-click = 'formshow()' >Cancel</button>
+        <hr>
+      </form>
+        
+        
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <div ng-repeat="post in posts | orderBy:'-'">
+        <h2><a href ="#comments/show/{{topic_id}}/{{post._id}}">{{post.title}}</a></h2>
+         <button type="btn" ng-click="deletePost(post)" class="btn btn-danger pull-right" ng-show ="buttonEditMode()">Destroy</button> 
+      <h5><span class="glyphicon glyphicon-time"></span> Post by {{post.author}}, {{post.date}}.</h5>
+      <h5><span class="label label-success">{{post.title}}</span></h5><br>
+      <p>{{post.content}}</p>
+      <hr>
+     
+      <!--</div>-->
+      <!--<h2>Officially Blogging</h2>-->
+      <!--<h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>-->
+      <!--<h5><span class="label label-success">Lorem</span></h5><br>-->
+      <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
+      <!--<hr>-->
+
+      <!--<h4>Leave a Comment:</h4>-->
+      <!--<form role="form">-->
+      <!--  <div class="form-group">-->
+      <!--    <textarea class="form-control" rows="3" required></textarea>-->
+      <!--  </div>-->
+      <!--  <button type="submit" class="btn btn-success">Submit</button>-->
+      <!--</form>-->
+      <!--<br><br>-->
+      
+      <!--<p><span class="badge">2</span><strong>Comments:</strong></p><br>-->
+      
+      <!--<div class="row">-->
+
+      <!--  <div class="col-sm-10">-->
+      <!--    <h4>Anja <small>Sep 29, 2015, 9:12 PM</small></h4>-->
+      <!--    <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+      <!--    <br>-->
+      <!--    <hr>-->
+      <!--  </div>-->
+        
+      <!--  <div class="col-sm-10">-->
+      <!--    <h4>John Row <small>Sep 25, 2015, 8:25 PM</small></h4>-->
+      <!--    <p>I am so happy for you man! Finally. I am looking forward to read about your trendy life. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+      <!--    <br>-->
+      <!--    <hr>-->
+      <!--  </div>-->
+        
+      <!--</div>-->
+    </div>
+  </div>
+</div>
+

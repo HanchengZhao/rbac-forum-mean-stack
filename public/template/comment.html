@@ -1,0 +1,46 @@
+
+  <body>
+     <h2>{{title}}</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Posted by {{author}}, {{date}}.</h5>
+      <h5><span class="label label-success">{{title}}</span></h5><br>
+      <p>{{content}}</p>
+      <hr>
+      <h4>Leave a Comment:</h4>
+      <form role="form" ng-submit = "createComment()">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required ng-model='comment'></textarea>
+        </div>
+        <p name='author' id='username' ><h5 id='username'  >author: {{username}}</h5></p>
+        <button type="submit" class="btn btn-success" ng-show='username'>Submit</button>
+        <p  class='pull-right'><h3><mark ng-hide='username'>Please login to comment</mark></h3></p>
+      </form>
+      <br><br>
+      
+      <p><strong>Comments:</strong></p><br>
+      
+      <div class="row" ng-repeat="comment in comments | orderBy:'-'">
+          <div class="col-sm-10">
+          <h4>{{comment.author}}<small>  {{comment.date}}</small></h4>
+          <p>{{comment.content}}</p>
+          <button type="btn" ng-click="deleteComment(comment)" class="btn btn-danger pull-right" ng-show ="buttonEditMode()">destroy</button> 
+          <br>
+          
+          <hr>
+        </div>
+      </div>  
+
+        <!--<div class="col-sm-10">-->
+        <!--  <h4>Anja <small>Sep 29, 2015, 9:12 PM</small></h4>-->
+        <!--  <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+        <!--  <br>-->
+        <!--  <hr>-->
+        <!--</div>-->
+        
+        <!--<div class="col-sm-10">-->
+        <!--  <h4>John Row <small>Sep 25, 2015, 8:25 PM</small></h4>-->
+        <!--  <p>I am so happy for you man! Finally. I am looking forward to read about your trendy life. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+        <!--  <br>-->
+        <!--  <hr>-->
+        <!--</div>-->
+      
+    

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
+        <title>RBAC functional forum</title>  
+    </head>
+    <body>
+    <div class="container" style="margin-top: 35px">
+    <!--Header-->
+    <div class="page-header page-heading">
+        <h1 class="pull-left">RBAC Forum</h1>
+        <ol class="breadcrumb pull-right where-am-i">
+            <li><a href="/auth">Login</a></li>
+            <li class="active">List of topics</li>
+        </ol>
+        <div class="clearfix"></div>
+    </div>
+    <p class="lead">This is a basic role-based access control forum. There are users, topics, posts, and comments. Topics have many posts which have many comments. Each post and comment is authored by a user.</p>
+     
+    <table class="table forum table-striped">
+    <thead>
+      <tr>
+        <th class="cell-stat"></th>
+        <th>
+          <h3>Topics</h3>
+        </th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Posts</th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Comments</th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Last Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+        <td>
+          <h4><a href="#">Questions</a><br><small>Some description</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">0</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">0</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">John Doe</a><br><small><i class="fa fa-clock-o"></i> 3 months ago</small></td>
+      </tr>
+      <tr>
+        <td class="text-center"><i class="fa fa-exclamation fa-2x text-danger"></i></td>
+        <td>
+          <h4><a href="#">Important changes</a><br><small>Category description</small></h4>
+        </td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">0</a></td>
+        <td class="text-center hidden-xs hidden-sm"><a href="#">0</a></td>
+        <td class="hidden-xs hidden-sm">by <a href="#">Jane Doe</a><br><small><i class="fa fa-clock-o"></i> 1 years ago</small></td>
+      </tr>
+    </tbody>
+  </table>
+    
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    </body>
+</html>
