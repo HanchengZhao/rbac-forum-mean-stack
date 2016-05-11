@@ -16,9 +16,9 @@
         <h1 class="pull-left">RBAC Forum</h1>
         <ol class="breadcrumb pull-right where-am-i">
             <li id = "user"><%= user.local.username %></li>
-            <li ng-show='<%= user.local.username %>'><a href="/login">Login</a></li>
+            <li ng-show='username'><a href="/login">Login</a></li>
             <li class="active"><a href = "profile#/">List of topics</a></li>
-            <li ng-show='!<%= user.local.username %>'><a href="/logout" class="btn btn-warning btn-sm">Logout</a></li>
+            <li ng-hide='username'><a href="/logout" class="btn btn-warning btn-sm">Logout</a></li>
         </ol>
         <div class="clearfix"></div>
     </div>

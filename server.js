@@ -1,3 +1,19 @@
+var express = require('express');
+var http = require('http');
+var path = require('path');
+var bodyParser = require('body-parser');
+var passport = require('passport');
+var flash    = require('connect-flash');
+var morgan       = require('morgan');
+var cookieParser = require('cookie-parser');
+var session      = require('express-session');
+
+var router = express();
+var server = http.createServer(router);
+router.use(bodyParser.json());
+
+router.use(express.static(path.resolve(__dirname, 'public')));
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/forum');
 
@@ -40,32 +56,6 @@ var deleteDoc = function(collection, id, callback){
     }
   });
 };
-
-// Posts
-// var postSchema = new mongoose.Schema({
-//   topic_id: String,
-//   author: String,
-//   body:   String,
-//   date: { type: Date, default: Date.now },
-//   strict: false ,
-// });
-
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var bodyParser = require('body-parser');
-var passport = require('passport');
-var flash    = require('connect-flash');
-var morgan       = require('morgan');
-var cookieParser = require('cookie-parser');
-var session      = require('express-session');
-
-var router = express();
-var server = http.createServer(router);
-router.use(bodyParser.json());
-
-router.use(express.static(path.resolve(__dirname, 'public')));
-
 
 
 //passport-login
@@ -174,7 +164,7 @@ router.post('/posts/show/:topic_id', function(req, res){
 	
 	post.save(function (err) {
 		if (!err) {
-			console.log("created1");
+			console.log("post created");
 			res.json(post);
 		} else {
 			console.log(err);
