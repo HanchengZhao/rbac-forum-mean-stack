@@ -7,6 +7,10 @@ There are users, topics, posts, and comments.
 Topics have many posts which have many comments. 
 Each post and comment is authored by a user.
 
+## Screenshot
+-Homepage:
+![homepage](/screenshots/homepage.png?raw=true)
+
 ## Setup
 
 1. `git clone git@github.com:HanchengZhao/rbac-forum-mean-stack.git `
