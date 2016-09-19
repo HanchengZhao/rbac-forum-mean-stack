@@ -7,10 +7,6 @@ There are users, topics, posts, and comments.
 Topics have many posts which have many comments. 
 Each post and comment is authored by a user.
 
-## Screenshot
--Homepage:
-![homepage](/screenshots/homepage.png?raw=true)
-
 ## Setup
 
 1. `git clone git@github.com:HanchengZhao/rbac-forum-mean-stack.git `
@@ -21,3 +17,14 @@ Each post and comment is authored by a user.
 
 1. `"mongod" in a terminal`
 2. `"node server.js" in another seperate terminal`
+
+
+## Screenshot
+- Homepage
+![homepage](/screenshots/homepage.png?raw=true)
+- Login
+![login](/screenshots/login.png?raw=true)
+- New post
+![newpost](/screenshots/newpost.png?raw=true)
+- Post content
+![postcontent](/screenshots/postcontent.png?raw=true)
