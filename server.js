@@ -14,6 +14,7 @@ router.use(bodyParser.json());
 
 router.use(express.static(path.resolve(__dirname, 'public')));
 
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/forum');
 

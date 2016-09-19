@@ -11,5 +11,8 @@ Each post and comment is authored by a user.
 
 1. `git clone git@github.com:HanchengZhao/rbac-forum-mean-stack.git `
 2. `npm install`
-3. `mongod --smallfiles --syslog --fork`
-4. `node server.js`
+
+## To run
+
+1. `"mongod" in a terminal`
+2. `"node server.js" in another seperate terminal`
